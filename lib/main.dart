@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:universal_covid_tracker/views/home.dart';
 import 'package:universal_covid_tracker/views/splash_screen.dart';
 
 void main(){
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget{
         brightness: Brightness.dark,
         primarySwatch: Colors.blueGrey
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 
