@@ -14,7 +14,7 @@ class reusableRow extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(title),
-              Text(value),
+              Text(value,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900),),
             ],
           ),
 

@@ -1,15 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:universal_covid_tracker/models/wrold_result.dart';
 import 'package:universal_covid_tracker/widget/reusable_row.dart';
-
 import '../services/state_services.dart';
 import 'countries_list.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return HomeScreenState();
@@ -18,9 +18,9 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late final AnimationController _controller =
-      AnimationController(duration: Duration(seconds: 2), vsync: this)
+      AnimationController(duration: const Duration(seconds: 2), vsync: this)
         ..repeat();
-  StateServices _stateServices = StateServices();
+  final StateServices _stateServices = StateServices();
   @override
   void dispose() {
     _controller.dispose();
@@ -38,6 +38,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return Scaffold(
       body: SafeArea(
         child: Expanded(
+
           child: Padding(
               padding:
                   const EdgeInsets.only(top: 40.9, left: 17.0, right: 17.0),
@@ -59,7 +60,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             dataMap: {
                               "Total":
                                   double.parse(snapshot.data!.cases.toString()),
-                              "Recoered": double.parse(
+                              "Recorded": double.parse(
                                   snapshot.data!.recovered.toString()),
                               "Death": double.parse(
                                   snapshot.data!.deaths.toString()),
@@ -115,14 +116,14 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (_) => CountriesList()));
+                                      builder: (_) => const CountriesList()));
                             },
                             child: Container(
                               height: 50,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Color(0xff1aa260)),
-                              child: Center(
+                                  color: const Color(0xff1aa260)),
+                              child: const Center(
                                 child: Text('Track Countries'),
                               ),
                             ),
